@@ -1,0 +1,26 @@
+FUNCTION palindrome(VAR mot : STRING[], debut,fin : INTEGER) BOOLEAN
+VAR 
+  x : INTEGER .
+BEGIN
+
+   X := mot.length ;
+
+   IF (x <= 1) THEN
+   Return TRUE ;
+   END_IF
+
+
+  debut:=mot[0];
+  fin:=mot[x-1];
+  WHILE (debut < fin) DO
+    IF (mot[debut] <> mot[fin]) THEN
+    Return FALSE ;
+    ELSE
+    debut:= debut+1;
+    fin:= fin-1;
+    Return palindrome(VAR mot : STRING[]? debut+1, fin-1);
+
+    END_IF
+    END_WHILE
+
+END    
